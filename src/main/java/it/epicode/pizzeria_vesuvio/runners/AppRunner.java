@@ -6,13 +6,14 @@ import it.epicode.pizzeria_vesuvio.stampe.Printable;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
 @Slf4j
-
+@Order(3)
 // questo runner utilizza la dependency injection tramite autowired
 public class AppRunner implements CommandLineRunner {
     @Autowired

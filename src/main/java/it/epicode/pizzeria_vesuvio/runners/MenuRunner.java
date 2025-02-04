@@ -8,12 +8,14 @@ import it.epicode.pizzeria_vesuvio.stampe.PrintService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
 
 @RequiredArgsConstructor
+@Order(2)
 public class MenuRunner implements CommandLineRunner {
     private final PrintService printService;
 
@@ -26,5 +28,6 @@ public class MenuRunner implements CommandLineRunner {
 
         log.info("---- stampa con dependency injection tramite costruttore");
         printService.stampa(pizza);
+        log.info("--------------------------------------------------------- ");
     }
 }
