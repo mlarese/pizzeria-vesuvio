@@ -12,7 +12,7 @@ public class BevandaConfig {
         Bevanda b = new Bevanda();
         b.setNome("Aranciata");
         b.setPrezzo(2.5);
-        b.setCalorie(100);
+        b.setCalorie(101);
         b.setQuantita("33cl");
         return b;
     }

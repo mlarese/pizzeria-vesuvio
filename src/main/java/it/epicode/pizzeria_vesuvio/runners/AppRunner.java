@@ -3,6 +3,8 @@ package it.epicode.pizzeria_vesuvio.runners;
 import it.epicode.pizzeria_vesuvio.entity.*;
 import it.epicode.pizzeria_vesuvio.stampe.PrintService;
 import it.epicode.pizzeria_vesuvio.stampe.Printable;
+import it.epicode.pizzeria_vesuvio.stampe.SeparatoreStampa;
+import it.epicode.pizzeria_vesuvio.stampe.TitoloStampa;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -62,8 +64,10 @@ public class AppRunner implements CommandLineRunner {
         printService.stampa(allergene);
         printService.stampa(pizzaiolo);
 
-        log.info("----  STAMPA LISTA  -----");
-        List<Printable> printables = List.of(pizza,bevanda,topping,allergene,pizzaiolo);
+        TitoloStampa titoloStampa = new TitoloStampa("MENU PIZZERIA");
+        SeparatoreStampa separatoreStampa = new SeparatoreStampa();
+
+        List<Printable> printables = List.of(titoloStampa, pizza,separatoreStampa, bevanda,separatoreStampa, topping,separatoreStampa,allergene,separatoreStampa,pizzaiolo);
         printService.stampa(printables);
 
     }

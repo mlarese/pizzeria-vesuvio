@@ -24,8 +24,8 @@ public class MenuConfig {
     @Bean
     public Menu menu () {
         Menu menu = new Menu();
-        menu.setNome("Menu Pizze");
-        menu.setVoci(List.of(pizzaMargherita, pizzaDiavola, aranciata, cocaCola, piattoDecorativo));
+        menu.setNome("Menu Pizze nuovo");
+        menu.setVoci(List.of(pizzaMargherita, pizzaDiavola, aranciata, cocaCola));
         return menu;
 
     }
