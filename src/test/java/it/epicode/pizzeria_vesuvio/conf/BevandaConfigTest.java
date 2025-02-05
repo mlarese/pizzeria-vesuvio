@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -47,6 +48,22 @@ public class BevandaConfigTest {
         b.setPrezzo(prezzo);
         b.setCalorie(calorie);
         b.setQuantita(quantita);
+
+        assertEquals(
+                nome + " € " + prezzo + " calorie: " + calorie + " quantita: " + quantita,
+                b.print());
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"Fanta", "Chinotto", "Sprite"})
+    @DisplayName("Test Bevande create  per verificare corretteza valori inseriti")
+    public void testBevandaPrintValue(String nome) {
+        Bevanda b = new Bevanda();
+
+        b.setNome(nome);
+        b.setPrezzo(2.5);
+        b.setCalorie(101);
+        b.setQuantita("33cl");
 
         assertEquals(
                 nome + " € " + prezzo + " calorie: " + calorie + " quantita: " + quantita,
