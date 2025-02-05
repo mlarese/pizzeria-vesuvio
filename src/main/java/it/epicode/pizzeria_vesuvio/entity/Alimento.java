@@ -21,6 +21,6 @@ public class Alimento implements Printable {
 
     @Override
     public String print() {
-        return  nome + " prezzo: " + prezzo + " calorie: " + calorie;
+        return  nome + " € " + prezzo + " calorie: " + calorie;
     }
 }
